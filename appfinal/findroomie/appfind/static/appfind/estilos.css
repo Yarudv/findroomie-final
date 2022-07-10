@@ -1,0 +1,71 @@
+body{
+    background-color: #F3F0F0;
+    height: 100%;
+    color: black;
+}
+footer{
+    height: 12rem;
+    background-color: #F5F5F5;
+    border-color: black;
+    border-style: solid ;
+    border-width: 1px;
+    color: black;
+    font-style: italic;
+    font-size:small;
+}
+header{
+    padding-bottom: 20px;
+}
+.minipie{
+    width: 70%;
+}
+.patamaño{ 
+    padding-left: 12%;
+    padding-right: 12%;
+}
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+}
+.ibotones{
+   top: 30px;
+   text-align: center;
+}
+.bordernav{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 5px;
+    outline: 4px solid #FAC102;
+}
+.jus{
+    padding-left: 10%;
+}
+.lventana{
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+.piebaner{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+.homeout{
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: 'Rambla', sans-serif; 
+}
+
+/* Estilos Personalizados a Boostrap */
+
+.dropdown-item{
+    color:#fff;
+}
+.carousel-control-next,
+.carousel-control-prev{
+    width: 5%;
+    opacity: 0.2;
+}

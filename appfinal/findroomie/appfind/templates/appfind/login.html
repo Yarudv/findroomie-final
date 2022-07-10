@@ -1,0 +1,11 @@
+{% extends 'appfind/base2.html' %}
+{% load crispy_forms_tags %}
+    {% block content %}
+        <form method = "POST" class="form">
+            {% csrf_token %}
+            <h1>Inicio de Sesion</h1><br>
+            {{form|crispy}}
+            <br>
+            <button type="submit" id="submit"><center> INICIAR SESION </center></button>
+        </form>
+        {% endblock %}

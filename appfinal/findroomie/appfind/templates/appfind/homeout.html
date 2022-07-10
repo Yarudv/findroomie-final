@@ -1,0 +1,57 @@
+{% extends 'appfind/base.html' %}
+{% load static%}
+    {% block content %}
+    <br>
+    <div class="container">
+        <div class="row" style="background-color:	#C0C0C0">
+          <div class="col-12 w-50">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="./img/comunidad.svg" class="d-block w-100" width="450px" height="350px"  alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="piebaner"><strong>Consigue el Roomie que necesitas</strong></h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="./img/viaje.svg" class="d-block w-100" width="450px" height="350px" alt="...">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5 class="piebaner"><strong>Consigue el Roomie que necesitas</strong></h5>
+                      </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                  <img src="./img/tener.svg" class="d-block w-100" width="450px" height="350px" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="piebaner"><strong>Consigue el Roomie que necesitas</strong></h5>
+                    </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br><hr>
+    <div>
+        <div class="homeout">
+            <div class="row content-lg-center">
+            <div class="col col-lg-12">
+                <h2>¡Bienvenido al espacio donde podrás conseguir tu match perfecto para compartir el espacio de tu día a día!</h2>
+            </div>
+            </div><br>
+            <a href="{% url 'login' %}" class="btn btn-dark text-warning active" role="button" data-bs-toggle="button" aria-pressed="true"> INICIA </a>
+        </div>
+        <img src="{% static 'appfind/img/comunidad1_.png' %}">
+    </div>
+    {% endblock %}

@@ -1,0 +1,21 @@
+<h1> FR! Tablero </h1>
+<div class="map">
+    {{ map|safe }}
+</div>
+<div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-6">
+        <h1> Miembros que quieren compartir su hogar </h1>
+        {% for i in com %}
+            <h1>{{i.nombre_pub}} {{i.direccion_pub}}</h1> 
+            <h5> {{i.oferta}}</h5>
+            <h3> MENSAJE: {{i.info_general}}</h3>
+        {% endfor %}
+    </div>
+    <div class="col-sm-6 col-md-5 col-lg-6">
+        <h1> Miembros que buscan un lugar </h1>
+        {% for e in bus %}
+            <h1>{{e.nombre_pub}} {{e.oferta}}</h1> 
+            <h5> {{e.info_general}}</h5>
+        {% endfor %}
+    </div>
+  </div>

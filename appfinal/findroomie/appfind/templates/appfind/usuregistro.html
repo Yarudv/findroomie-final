@@ -1,0 +1,21 @@
+{% extends 'appfind/base2.html' %}
+  {% load static%}
+  {% load crispy_forms_tags %}
+    {% block content %}
+      <form method = "POST" class="form">
+        {% csrf_token %}
+          <h1>Registro de Usuario</h1><br>
+          {{ form|crispy}}
+          <button type="submit" id="submit"><center> REGISTRAR </center></button>
+      </form>
+    {% endblock %}
+        <br>
+        <br>
+      {% if messages %}
+        {% for i in messages %}
+          <div class="notification {{i.tags}}">
+            {{i}}
+          </div>
+        {% endfor %}
+      {% endif %}
+   

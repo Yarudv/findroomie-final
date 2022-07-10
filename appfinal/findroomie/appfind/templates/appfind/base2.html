@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Roomie!</title>
+    <!-- link iconos -->
+    <link rel="icon" href="https://images.vexels.com/media/users/3/235229/isolated/lists/52de9f383523fe23d8cb09dde2f6a6c1-insignia-espacial-de-astronauta.png">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- fuente Rambla -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rambla:ital,wght@1,700&display=swap" rel="stylesheet">
+     <!-- enrutamiento css -->
+     <link rel="stylesheet" type="text/css" href="{% static 'appfind/estilos.css' %}">
+</head>
+<body>
+    <header>
+        <section class="bordernav">
+            <nav class="navbar navbar-expand-lg" style="background-color: black ;">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
+                  </a>
+                  <a class="navbar-brand text-warning" href="#">FR!</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="#"> Home </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-primary" href="#">Salir</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </section>
+    </header>
+    <br>
+    <div>
+        {% block content%}
+        {% endblock %}
+      </div>
+      <br>
+      <hr>
+    <footer>
+        <div class="card bg-dark">
+            <div class="card text-center">
+                <div class="card-header">
+                Find a Roomie!
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">Tu plataforma preferida</h5>
+                <p class="card-text">Es una plataforma orientada a la busqueda inteligente de 
+                    compañeros que quieran arrendar piezas disponibles en sus viviendas
+                    o bien, encontrar un lugar para vivir en compañia de un roomie.  
+                    Sumergete en tu busqueda o publica tu lugar, con Find a Roomie! es más facil</p>
+                <a href="#" class="btn btn-dark">TEAM FIND Santiago de Chile 2022</a>
+                </div>
+                <div class="card-footer text-muted">
+                    <nav><center>
+                        <a class="text-primary" href="Home.html">Home</a> |
+                        <a href="Busqueda.html">FR! Tablero</a> |
+                        <a href="quienessomos.html">¿Quienes Somos?</a> |
+                        <a href="Ayuda.html">Contacta con nosotros</a>  |
+                    </center></nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- scrpts bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    
