@@ -1,6 +1,61 @@
 {% extends 'appfind/base2.html' %}
   {% load static%}
-  {% load crispy_forms_tags %}
     {% block content %}
-      
+    <main>
+      <br>
+      <br>
+      <br>
+        <section class="card-publication fix-margin">
+          <div class="row justify-content-center pb-3">
+              <div class="col-12 col-md-6">
+                  <div class="card pb-5">
+                      <div class="card-header">
+                          <h2> Mis Publicaciones </h2>
+                      </div>
+                      <div class="card-body">
+                        {% for i in usu_pub %}
+                          <div class="publication">
+                              <picture class="image-publication col-md-4">
+                                  {% if i.img %}
+                                    <img src="{{i.img.url}}" alt="">
+                                  {% endif %}
+                              </picture>
+                              <div class="content-publication">
+                                  <div class="header-publication">
+                                      <h2 class="title">{{i.nombre_pub}}</h2>
+                                      <p class="timeline mb-1"> {{i.fecha_pub}} </p>
+                                      <p class="direction mb-1">{{i.direccion_pub}}</p>
+                                  </div> 
+                                  <div class="description-publication">
+                                      <p>{{i.info_general}}</p>
+                                  </div>
+                                  <div class="bir">
+                                      <p class="mb-0">IR</p>
+                                  </div>
+                                  <div class="price">
+                                      <p class="mb-0"> {{i.oferta}} CLP</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div>
+                          <a href="{% url 'eliminarpub' i.id %}" class="btn btn-dark text-warning" type="button"> ELIMINAR </a>
+                        </div>
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+      </section>
+    </main>
+    <div class="row justify-content-center pb-5 mb-5">
+      <div class="col-12 col-md-6 form-wrap">
+        <div class="row justify-content-center">
+          <div class="col-6">
+            <a href="{% url 'formc' %}" class="btn btn-dark text-warning active w-100" role="button" aria-pressed="true"> ¡COMPARTE TU HOGAR! </a>
+          </div>
+          <div class="col-6">
+            <a href="{% url 'formb' %}" class="btn btn-dark text-warning active w-100" role="button" aria-pressed="true"> ¡BUSCA UN LUGAR! </a>
+          </div>
+        </div>
+      </div>
+    </div> 
     {% endblock %}

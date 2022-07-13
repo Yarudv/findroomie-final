@@ -1,5 +1,3 @@
-from cProfile import label
-from email.policy import default
 from django import forms
 from django.db.models import fields
 from django.contrib.auth.forms import UserCreationForm

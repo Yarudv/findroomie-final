@@ -1,11 +1,14 @@
-{% extends 'appfind/base2.html' %}
+{% extends 'appfind/base.html' %}
 {% load crispy_forms_tags %}
     {% block content %}
-        <form method = "POST" class="form">
-            {% csrf_token %}
-            <h1>Inicio de Sesion</h1><br>
-            {{form|crispy}}
-            <br>
-            <button type="submit" id="submit"><center> INICIAR SESION </center></button>
-        </form>
-        {% endblock %}
+    <div class="row justify-content-center pb-5 mb-5">
+        <div class="col-12 col-md-6 form-wrap">
+            <form method = "POST" class="form form-container">
+                {% csrf_token %}
+                <h1 class="text-center">Inicio de Sesión</h1>
+                {{form|crispy}}
+                <button type="submit" id="submit" class="btn btn-dark text-warning active mt-3">INICIAR SESIÓN</button>
+            </form>
+        </div>
+    </div>    
+    {% endblock %}

@@ -1,6 +1,7 @@
 import folium
 from django.shortcuts import redirect, render
 from . models import Publicacion
+from django.contrib.auth.models import User
 from .forms import PublicacionFormB, PublicacionFormC, RegistroUsuForm
 from django.contrib import messages
 from folium.plugins import MiniMap
@@ -26,19 +27,21 @@ def pubbuscar(request):
     if request.method == "POST":
         form= PublicacionFormB(data = request.POST)
         if form.is_valid():
+            form.instance.user = request.user 
             provee= form.save(commit = False)
             provee.save()
-            return redirect(request, 'appfind/tablero.html')
     form= PublicacionFormB()
     return render(request, 'appfind/buscarform.html', {"form": form})
 
 def pubcompartir(request):
     if request.method == "POST":
-        form= PublicacionFormC(data = request.POST)
+        form= PublicacionFormC(request.POST, request.FILES)
         if form.is_valid():
+            form.instance.user = request.user 
             provee= form.save(commit = False)
+            print(request.FILES.get("img"))
+            provee.img= request.FILES.get("img")
             provee.save()
-            return redirect(request, 'appfind/tablero.html')
     form= PublicacionFormC()
     return render(request, 'appfind/compartirform.html', {"form":form})
 
@@ -48,17 +51,32 @@ def frtablero(request):
     folium.Marker(location= [-33.45694, -70.64827], popup= popuptext).add_to(santiago)
     folium.Circle(location= [-33.45694, -70.64827], color= "blue", fill_color= "black", radius= 40, weight= 6, fill_opacity= 0.6).add_to(santiago)
     santiago= santiago._repr_html_()
-    bus= Publicacion.objects.all()
-    comp= Publicacion.objects.all()
-    return render(request, 'appfind/tablero.html', {'map': santiago, 'bus': bus, 'comp': comp})
+    bus= Publicacion.objects.filter(objetivo= 'False')
+    co= Publicacion.objects.filter(objetivo= 'True')
+    return render(request, 'appfind/tablero.html', {'map': santiago, 'bus': bus, 'co': co})
+
+def eliminarpub(request, id):
+    usuarioeli = Publicacion.objects.filter(pk= id)
+    usuarioeli.delete()
+    return render(request, 'appfind/eliminarpub.html')
 
 @login_required
-def mispublicaciones(request):
-    return render(request, 'appfind/mispublicaciones.html')
+def enviop(request):
+    return render(request, 'appfind/enviop.html')
+
+@login_required
+def mispublicaciones(request, id):
+    usu_pub= Publicacion.objects.filter(user_id = id)
+    return render(request, 'appfind/mispublicaciones.html', {'usu_pub': usu_pub})
 
 @login_required
 def homein(request):
     return render(request, 'appfind/homein.html')
+
+def quieness(request):
+    return render(request, 'appfind/quienessomos.html')
+
+
 
 
 

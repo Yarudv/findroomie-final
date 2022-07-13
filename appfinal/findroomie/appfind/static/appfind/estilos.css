@@ -3,6 +3,10 @@ body{
     height: 100%;
     color: black;
 }
+main{
+    font-family: 'Rambla', sans-serif; 
+    padding-top:70px;
+}
 footer{
     height: 12rem;
     background-color: #F5F5F5;
@@ -12,9 +16,6 @@ footer{
     color: black;
     font-style: italic;
     font-size:small;
-}
-header{
-    padding-bottom: 20px;
 }
 .minipie{
     width: 70%;
@@ -48,11 +49,14 @@ p{
     font-size: 40px;
 }
 .piebaner{
+    position: relative;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
+    z-index: 2;
 }
 .homeout{
+    padding-top: 50px;
     text-align: center;
     padding-left: 10%;
     padding-right: 10%;
@@ -60,12 +64,164 @@ p{
 }
 
 /* Estilos Personalizados a Boostrap */
-
+.stripe-carousel{
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    background-color: rgba(243, 240, 240, 35%);
+    bottom: 0;
+    z-index: 2;
+}
 .dropdown-item{
     color:#fff;
+}
+.carousel-item{
+    height: 400px;
+}
+.carousel-indicators{
+    z-index: 3;
+}
+.carousel-indicators [data-bs-target]{
+    background-color: #000;
+}
+.carousel-caption{
+    color: #000;
 }
 .carousel-control-next,
 .carousel-control-prev{
     width: 5%;
     opacity: 0.2;
+}
+
+/* Clases para formularios */
+.form-wrap {
+    background-color: #fff;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.control-group{
+    margin-bottom:8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.control-group input{
+    border-radius: 5px;
+}
+.control-group select{
+    padding: 1px 16px;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+.control-group input,
+.control-group select,
+.control-group textarea{
+    width: 100%;
+}
+.controls{
+    width: 320px;
+}
+
+/* Clases para mapas */
+.map iframe{
+    height: 60% !important;
+}
+.fix-margin{
+    margin-top: -15%;
+}
+
+/* Card de Publicaciones */
+.card-publication{
+    padding-bottom:50px;
+}
+.card-publication .card-body{
+    overflow-y: scroll;
+}
+.publication{
+    display: flex;
+    background-color: rgba(0,0,0,.03);
+    border-radius: 15px;
+    -webkit-box-shadow: 3px 2px 8px -3px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 3px 2px 8px -3px rgba(0,0,0,0.75);
+    box-shadow: 3px 2px 8px -3px rgb(0 0 0 / 75%);
+}
+.image-publication img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+.header-publication{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+.header-publication .title{
+    font-size: 1.2rem;
+}
+
+.header-publication .timeline{
+    font-size: .75rem;
+    line-height: 1;
+}
+.header-publication .direction{
+    font-size: .75rem;
+    line-height: 1;
+}
+.description-publication{
+    font-size: 12px;
+}
+.content-publication{
+    padding: 20px 16px;
+}
+.price{
+    display: flex;
+    justify-content: end;
+    font-size: 14px;
+}
+.price p{
+    background-color: #FAC102;
+    padding: 5px 16px;
+    color: black;
+    border-radius: 4px;
+    border-color: black;
+    border-style: groove;
+}
+
+/* MEDIA QUERIES*/
+@media screen and (max-width:767.98px){
+    .publication{
+        flex-direction: column;
+    }
+    .image-publication {
+        height: 100px;
+    }
+    .image-publication img{
+        border-radius: 15px 15px 0 0;
+    }
+}
+
+.container_logo{
+    padding-top: 15px;
+}
+
+.bir{
+    display: flex;
+    justify-content: start;
+    font-size: 12px; 
+}
+
+.bir p{
+    background-color: #FAC102;
+    padding: 5px 16px;
+    color: black;
+    border-radius: 4px;
+    border-color: black;
+    border-style: groove;
 }
